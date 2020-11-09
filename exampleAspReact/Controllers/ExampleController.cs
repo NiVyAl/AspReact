@@ -71,11 +71,16 @@ namespace exampleAspReact.Controllers
 		[HttpPost]
 		public bool Form([FromBody] User data)
 		{
-
-			Console.WriteLine($"{data.ID}, {data.name}, {data.surname}, {data.years}, {data.isSubscribe}");
-			_context.User.Add(data);
-			_context.SaveChangesAsync();
+			Console.WriteLine($"{data.name}, {data.surname}, {data.years}, {data.isSubscribe}");
+			AddUser(data);
 			return true;
+		}
+
+		public async void AddUser(User data)
+		{
+			_context.User.Add(data);
+			int result = await _context.SaveChangesAsync();
+			Console.WriteLine(result);
 		}
 	}
 }

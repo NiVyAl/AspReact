@@ -14,7 +14,7 @@ export class ExampleFetch extends Component {
     }
 
     sendForm() {
-        let data = { ID: 101, name: "Иван", surname: "Иванов", years: 32, isSubscribe: true };
+        let data = { name: "Иван", surname: "Иванов", years: 32, isSubscribe: true };
         console.log(data);
         axios.post("example", data)
             .then(res => {

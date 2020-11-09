@@ -36,11 +36,13 @@ namespace exampleAspReact.Controllers
     {
 
 		private readonly ILogger<ExampleController> _logger;
+		private exampleAspReact.Data.MyDbContext _context;
 		//private readonly MyDbContext _myDbContext = new MyDbContext();
 
-		public ExampleController(ILogger<ExampleController> logger)
+		public ExampleController(ILogger<ExampleController> logger, exampleAspReact.Data.MyDbContext context)
 		{
 			_logger = logger;
+			_context = context;
 			Console.WriteLine("Logger: ");
 			Console.WriteLine(_logger);
 			Console.WriteLine();
@@ -69,8 +71,10 @@ namespace exampleAspReact.Controllers
 		[HttpPost]
 		public bool Form([FromBody] User data)
 		{
+
 			Console.WriteLine($"{data.ID}, {data.name}, {data.surname}, {data.years}, {data.isSubscribe}");
-			//var category = _myDbContext.Categories.First();
+			_context.User.Add(data);
+			_context.SaveChangesAsync();
 			return true;
 		}
 	}

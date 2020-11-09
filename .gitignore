@@ -403,3 +403,8 @@ ASALocalRun/
 
 # Local History for Visual Studio
 .localhistory/
+
+
+# DB Browser for SQLite
+*.db-shm
+*.db-wal

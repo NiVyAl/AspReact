@@ -32,7 +32,6 @@ namespace exampleAspReact
                 {
                     var context = services.GetRequiredService<MyDbContext>();
                     context.Database.EnsureCreated();
-                    // DbInitializer.Initialize(context);
                 }
                 catch (Exception ex)
                 {

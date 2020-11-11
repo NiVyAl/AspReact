@@ -1,23 +1,3 @@
-//using System;
-//using System.Collections.Generic;
-//using System.Linq;
-//using System.Threading.Tasks;
-//using Microsoft.AspNetCore.Mvc;
-
-//// For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-
-//namespace exampleAspReact.Controllers
-//{
-//	public class ExampleController : Controller
-//	{
-//		// GET: /<controller>/
-//		public IActionResult Index()
-//		{
-//			return View();
-//		}
-//	}
-//}
-
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -47,14 +27,6 @@ namespace exampleAspReact.Controllers
 			Console.WriteLine(_logger);
 			Console.WriteLine();
 		}
-
-		//[HttpGet]
-		//public string Get(int id)
-		//{
-		//	Console.WriteLine("Get");
-		//	Console.WriteLine(id);
-		//	return $"{id} message from the server!";
-		//}
 
 		[HttpGet]
 		public string Index()
